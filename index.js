@@ -6,14 +6,7 @@ const MongoClient = mongodb.MongoClient;
 const uri = "mongodb+srv://admin:P@55w0rd@cluster0-mu65a.mongodb.net/Asn2?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 const bodyParser = require("body-parser")
-class Person {
-  constructor(name,size,height,type){
-    this.name = name;
-    this.size = size;
-    this.height = height;
-    this.type = type;
-  }
-}
+
 var app = express();
   app.use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
@@ -22,10 +15,8 @@ var app = express();
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 app.use(bodyParser.urlencoded({extended: false}))
 
-
 function handleData(res,data){
     //Send back to client
-    // console.log(data);
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(data))
 }
@@ -84,7 +75,6 @@ app.post("/add",(req,res)=>{
           if (err) throw err;
           console.log("Inserted ",req);
         })
-        
       }
     },function(err){
       db.close();
@@ -99,9 +89,7 @@ app.post("/add",(req,res)=>{
 })
 
 app.post("/remove",(req,res)=>{
-  
   var req = req.body;
-  
   try{
     const id = req.id;
     client.connect((err,db) => {
@@ -113,7 +101,6 @@ app.post("/remove",(req,res)=>{
           if (err) throw err;
           console.log("Removed ",id);
         })
-        
       }
     },function(err){
       db.close();
@@ -143,7 +130,6 @@ app.post("/edit",(req,res)=>{
           if (err) throw err;
           console.log("Updated ",id);
         })
-        
       }
     },function(err){
       db.close();
@@ -156,4 +142,3 @@ app.post("/edit",(req,res)=>{
     res.end(JSON.stringify({"status":"error","code":"-1","msg":"An error has occured"}));
   }
 })
-

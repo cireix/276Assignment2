@@ -33,7 +33,6 @@
             user-select: none;
         }
         .popup{
-            /* border: 1px solid black; */
             width: 300px;
             height: 400px;
             display: none;
@@ -55,7 +54,6 @@
             cursor: pointer;
             font-family: Arial;
             font-size: 20px;
-      
         }
         .overlay{
             position:fixed;
@@ -90,7 +88,6 @@
             cursor: pointer;
         }
         .add{
-            /* border: 1px solid black; */
             width: 300px;
             height: 400px;
             display: none;
@@ -178,9 +175,6 @@
             div.style.width = data["size"]+"px";
             div.style.height = data["height"]+"px";
             div.classList.add("generated")
-
-            
-
             document.getElementById("display").appendChild(div);
         }
         function getAll() {
@@ -200,8 +194,7 @@
                     $("#height").html(data[id]["height"]);
                     $("body").css("overflow","hidden")
                 })
-            })
-            
+            })    
         }
         getAll();
         $(".overlay").click(function(){
@@ -215,12 +208,6 @@
             $(".popup").css("display","none");
             $(".add").css("display","none");
             $("body").css("overflow","visible")
-        })
-        
-        $("#name").click(function(){
-            if(edit){
-
-            }
         })
         function editElement(){
             edit = !edit;
@@ -334,17 +321,13 @@
                     height: $("#addHeight").val(),
                 },
                 success: function(res){
-                    console.log(res);
-                    
-                        data = {}
-                        $("#display").html("");
-                        getAll();
-                        $(".overlay").css("display","none");
-                        $(".popup").css("display","none");
-                        $(".add").css("display","none");
-                        $("body").css("overflow","visible")
-                    
-                    
+                    data = {}
+                    $("#display").html("");
+                    getAll();
+                    $(".overlay").css("display","none");
+                    $(".popup").css("display","none");
+                    $(".add").css("display","none");
+                    $("body").css("overflow","visible")
                 },
             });
         }
@@ -356,5 +339,3 @@
     </script>
 </body>
 </html>
-
-<!-- blood type verification -->
