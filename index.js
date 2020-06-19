@@ -131,7 +131,6 @@ app.post("/edit",(req,res)=>{
   console.log(req);
   try{
     const id = req.id;
-    //For plus signs, %2B must be sent instead of +
     delete req["_id"];
     const fields = req;
     console.log(fields);
