@@ -279,15 +279,15 @@
                     },
                     success: function(res){
                         console.log(res);
+                        $(".overlay").css("display","none");
+                        $(".popup").css("display","none");
+                        $(".add").css("display","none");
+                        $("body").css("overflow","visible");
                         setTimeout(function(){
                             data = {}
                             $("#display").html("");
                             getAll();
-                            $(".overlay").css("display","none");
-                            $(".popup").css("display","none");
-                            $(".add").css("display","none");
-                            $("body").css("overflow","visible")
-                        },1000);
+                        },500);
                     }
                 });
             }
@@ -301,15 +301,15 @@
                 },
                 success: function(res){
                     console.log(res);
+                    $(".overlay").css("display","none");
+                    $(".popup").css("display","none");
+                    $(".add").css("display","none");
+                    $("body").css("overflow","visible");
                     setTimeout(function(){
                         data = {}
                         $("#display").html("");
                         getAll();
-                        $(".overlay").css("display","none");
-                        $(".popup").css("display","none");
-                        $(".add").css("display","none");
-                        $("body").css("overflow","visible")
-                    },1000);
+                    },500);
                 },
             });
         }
@@ -325,15 +325,15 @@
                 },
                 success: function(res){
                     console.log(res);
+                    $(".overlay").css("display","none");
+                    $(".popup").css("display","none");
+                    $(".add").css("display","none");
+                    $("body").css("overflow","visible");
                     setTimeout(function(){
                         data = {}
                         $("#display").html("");
                         getAll();
-                        $(".overlay").css("display","none");
-                        $(".popup").css("display","none");
-                        $(".add").css("display","none");
-                        $("body").css("overflow","visible")
-                    },1000);
+                    },500);
                 },
             });
         }
@@ -343,6 +343,6 @@
             $("body").css("overflow","hidden")
         })
     </script>
-    
+
 </body>
 </html>
