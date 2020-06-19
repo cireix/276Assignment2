@@ -225,7 +225,6 @@
                     }else if(el.getAttribute("id") == "type"){
                         input = $('<select />', {
                             'id': el.getAttribute("id"),
-                            // 'value': $(el).html()
                         });
                         for (var i in types){
                             var option = $("<option/>",{
@@ -280,13 +279,15 @@
                     },
                     success: function(res){
                         console.log(res);
-                        data = {}
-                        $("#display").html("");
-                        getAll();
-                        $(".overlay").css("display","none");
-                        $(".popup").css("display","none");
-                        $(".add").css("display","none");
-                        $("body").css("overflow","visible")
+                        setTimeout(function(){
+                            data = {}
+                            $("#display").html("");
+                            getAll();
+                            $(".overlay").css("display","none");
+                            $(".popup").css("display","none");
+                            $(".add").css("display","none");
+                            $("body").css("overflow","visible")
+                        },1000);
                     }
                 });
             }
@@ -300,13 +301,15 @@
                 },
                 success: function(res){
                     console.log(res);
-                    data = {}
-                    $("#display").html("");
-                    getAll();
-                    $(".overlay").css("display","none");
-                    $(".popup").css("display","none");
-                    $(".add").css("display","none");
-                    $("body").css("overflow","visible")
+                    setTimeout(function(){
+                        data = {}
+                        $("#display").html("");
+                        getAll();
+                        $(".overlay").css("display","none");
+                        $(".popup").css("display","none");
+                        $(".add").css("display","none");
+                        $("body").css("overflow","visible")
+                    },1000);
                 },
             });
         }
@@ -321,13 +324,16 @@
                     height: $("#addHeight").val(),
                 },
                 success: function(res){
-                    data = {}
-                    $("#display").html("");
-                    getAll();
-                    $(".overlay").css("display","none");
-                    $(".popup").css("display","none");
-                    $(".add").css("display","none");
-                    $("body").css("overflow","visible")
+                    console.log(res);
+                    setTimeout(function(){
+                        data = {}
+                        $("#display").html("");
+                        getAll();
+                        $(".overlay").css("display","none");
+                        $(".popup").css("display","none");
+                        $(".add").css("display","none");
+                        $("body").css("overflow","visible")
+                    },1000);
                 },
             });
         }
